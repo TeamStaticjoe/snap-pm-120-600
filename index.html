@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="snap-pm-120-600" content="width=120,height=600" />
+		<script type="text/javascript">
+			var clickTag = "https://www.qualcomm.com/de/snapdragon#gaming"
+		</script>
 		<style>
 			.sd-pm-120-600 {
 				width: 120px;
@@ -14,6 +18,8 @@
 				overflow: hidden;
 				position: relative;
 				display: flex;
+				margin: 0;
+				padding: 0;
 			}
 
 			.powerfully {
@@ -55,7 +61,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 	</head>
 	<body>
-		<div class="sd-pm-120-600" width="120" height="600">
+		<a
+			href="javascript:window.open(window.clickTag)"
+			class="sd-pm-120-600"
+			width="120"
+			height="600"
+		>
 			<img
 				class="powerfully"
 				src="https://assets.codepen.io/1253946/pm-120-600-powerfully.png"
@@ -85,7 +96,7 @@
 				height="23"
 				alt=""
 			/>
-		</div>
+		</a>
 	</body>
 	<script>
 		const sdPowerfullyMoving120x600Animate = () => {
@@ -94,7 +105,7 @@
 			const powerfullyMask = document.querySelector(
 				".sd-pm-120-600 .powerfully-mask"
 			)
-			const powerfully = document.querySelector(".sd-pm-120-600 .powerfully") //118px final top 87px diff
+			const powerfully = document.querySelector(".sd-pm-120-600 .powerfully")
 			const moving = document.querySelector(".sd-pm-120-600 .moving")
 			const mask = document.querySelector(".sd-pm-120-600 .svgmask1-rect")
 
@@ -104,12 +115,6 @@
 				.set(button, { autoAlpha: 0 })
 
 				.to([powerfully, moving], { autoAlpha: 1, duration: 0.75 })
-				// .to(powerfullyMask, {y:20, duration:2})
-				// .to(powerfully, {y:-8, duration:.5})
-				// .to(moving, {y:8, duration:.5}, "<")
-				// .to(powerfully, {y:-20, duration:2})
-				// .to(powerfully, {y:-32, duration:.75, ease: "power4.inOut"}, "<1")
-				// .to(moving, {y:52, duration:.75, ease: "power4.inOut"}, "<")
 				.to(
 					button,
 					{ autoAlpha: 1, duration: 0.5, ease: "power1.inOut" },
